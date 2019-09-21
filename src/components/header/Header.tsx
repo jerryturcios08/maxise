@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.module.css';
 
+/**
+ * The IProps interface contains the types for the Header component props.
+ */
 interface IProps {
   page: string;
   title: string;

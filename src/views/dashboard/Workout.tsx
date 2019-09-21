@@ -1,12 +1,27 @@
 import React from 'react';
 
-// import styles from './Dashboard.module.css';
+import styles from './Dashboard.module.css';
+import { IWorkout } from '../../index.d';
 
-// export default function Workout(props: IProps) {
-//   return (
-//     <div className={styles.workoutCard} key={workout.id}>
-//       <p>{workout.day}</p>
-//       <p>{workout.activity}</p>
-//     </div>
-//   );
-// }
+/**
+ * The IProps interface contains the types for the Workout component props.
+ */
+interface IProps {
+  workout: IWorkout;
+}
+
+/**
+ * The Workout function returns a React component. The Workout component is a
+ * stateless function that renders an individual workout card on the home page.
+ *
+ * @param props The data passed down by the parent component
+ * @returns {JSX.Element} The Workout React component
+ */
+export default function Workout(props: IProps): JSX.Element {
+  return (
+    <div className={styles.workoutCard} key={props.workout.id}>
+      <p>{props.workout.day}</p>
+      <p>{props.workout.activity}</p>
+    </div>
+  );
+}

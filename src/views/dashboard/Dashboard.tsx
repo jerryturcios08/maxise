@@ -2,16 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/header';
 import styles from './Dashboard.module.css';
+import { IWorkout } from '../../index.d';
 import { workoutsList } from './seed';
-
-/**
- * The IWorkout interface holds the types for a workout object.
- */
-interface IWorkout {
-  id: number;
-  day: string;
-  activity: string;
-}
+import Workout from './Workout';
 
 /**
  * The Dashboard function returns a React component that displays the current
@@ -24,6 +17,10 @@ export default function Dashoard(): JSX.Element {
   const [firstName, setFirstName] = useState<string>('');
   const [workouts, setWorkouts] = useState<IWorkout[]>([]);
 
+  /**
+   * The useEffect function is called below in order to set the state with new
+   * values. The code below "sends a request" to get the data.
+   */
   useEffect(() => {
     setFirstName('Jerry');
     setWorkouts(workoutsList);
@@ -34,10 +31,7 @@ export default function Dashoard(): JSX.Element {
       <Header page="home" title={`${firstName}'s Activities`} />
       <div className={styles.workoutsList}>
         {workouts.map(workout => (
-          <div className={styles.workoutCard} key={workout.id}>
-            <p>{workout.day}</p>
-            <p>{workout.activity}</p>
-          </div>
+          <Workout workout={workout} />
         ))}
       </div>
     </>
