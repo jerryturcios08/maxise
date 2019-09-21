@@ -1,0 +1,16 @@
+.workoutCard {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 20px;
+  margin: 10px 10px;
+  margin: 10px 5px 10px 5px;
+  padding: 5em 10em;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.workoutCard:hover {
+  border: 1px solid rgb(230, 230, 230);
+  box-shadow: 1px 1px 10px rgb(200, 200, 200);
+  cursor: pointer;
+  transition: 0.2s;
+}

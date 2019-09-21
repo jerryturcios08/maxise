@@ -13,7 +13,7 @@ import Workout from './Workout';
  *
  * @returns {JSX.Element} The Dashboard React component
  */
-export default function Dashoard(): JSX.Element {
+export default function Dashboard(): JSX.Element {
   const [firstName, setFirstName] = useState<string>('');
   const [workouts, setWorkouts] = useState<IWorkout[]>([]);
 
@@ -31,7 +31,7 @@ export default function Dashoard(): JSX.Element {
       <Header page="home" title={`${firstName}'s Activities`} />
       <div className={styles.workoutsList}>
         {workouts.map(workout => (
-          <Workout workout={workout} />
+          <Workout key={workout.id} workout={workout} />
         ))}
       </div>
     </>

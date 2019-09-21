@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Dashboard.module.css';
+import styles from './Workout.module.css';
 import { IWorkout } from '../../index.d';
 
 /**
@@ -19,7 +19,7 @@ interface IProps {
  */
 export default function Workout(props: IProps): JSX.Element {
   return (
-    <div className={styles.workoutCard} key={props.workout.id}>
+    <div className={styles.workoutCard}>
       <p>{props.workout.day}</p>
       <p>{props.workout.activity}</p>
     </div>
