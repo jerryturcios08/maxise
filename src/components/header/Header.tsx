@@ -8,6 +8,13 @@ interface IProps {
   title: string;
 }
 
+/**
+ * The Header function returns a React component. The component is a reusable
+ * title and navigation UI that appears at the top of each page.
+ *
+ * @param props The data passed down by the parent component
+ * @returns {JSX.Element} The Header React component
+ */
 export default function Header(props: IProps): JSX.Element {
   return (
     <div className={styles.headerRow}>
